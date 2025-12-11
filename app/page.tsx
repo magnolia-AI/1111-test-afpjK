@@ -1,28 +1,40 @@
 'use client'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent } from '@/components/ui/card'
-import { useToast } from "@/hooks/use-toast"
 
-{/* 
-  TEMPLATE PAGE: Home
-  This is a template home page.
-  Replace all content with content that suits the users request.
-*/}
+import { SiteHeader } from "@/components/site-header"
+import { HeroSection } from "@/components/hero-section"
+import { CategoryGrid } from "@/components/category-grid"
+import { NewsSection } from "@/components/news-section"
+import { SiteFooter } from "@/components/site-footer"
+
 export default function Home() {
-  const { toast } = useToast()
   return (
-    <div className="min-h-full">
-
-      <section className="container mx-auto px-4 pt-24 pb-20">
-        <div className="max-w-[800px] mx-auto text-center">
-          <h1 className="text-5xl font-bold tracking-tight lg:text-6xl">
-            Template Starter
-          </h1>
-          <p className="mt-6 text-xl text-muted-foreground max-w-[600px] mx-auto">
-            This is a customizable template. Replace all content with your own using the chat interface.
-          </p>
-        </div>
-      </section>
+    <div className="flex min-h-screen flex-col bg-background">
+      <SiteHeader />
+      <main className="flex-1">
+        <HeroSection />
+        <CategoryGrid />
+        <NewsSection />
+        <section className="bg-primary text-white py-16">
+          <div className="container px-4 text-center">
+            <h2 className="text-3xl font-bold mb-6">Vill du veta mer om hur 1177 fungerar?</h2>
+            <p className="max-w-2xl mx-auto text-lg mb-8 opacity-90">
+              1177 är hela Sveriges samlingsplats för information och tjänster inom hälsa och vård. 
+              Vi finns på webben, på telefon och som app.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="bg-white text-primary hover:bg-gray-100 font-bold py-3 px-8 rounded-full transition-colors">
+                Läs om 1177
+              </button>
+              <button className="bg-transparent border-2 border-white hover:bg-white/10 text-white font-bold py-3 px-8 rounded-full transition-colors">
+                Jobba med oss
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <SiteFooter />
     </div>
   )
 }
+
+
