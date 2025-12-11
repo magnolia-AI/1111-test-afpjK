@@ -26,53 +26,69 @@ export function SiteHeader() {
                   Sjukdomar & besvär
                 </Link>
                 <Link href="#" className="text-lg font-semibold hover:text-primary">
-                  Hitta vård
+                  Undersökning & behandling
                 </Link>
                 <Link href="#" className="text-lg font-semibold hover:text-primary">
                   Liv & hälsa
                 </Link>
                 <Link href="#" className="text-lg font-semibold hover:text-primary">
-                  Barn & föräldrar
+                  Barn & gravid
+                </Link>
+                <Link href="#" className="text-lg font-semibold hover:text-primary">
+                  Olyckor & skador
+                </Link>
+                <Link href="#" className="text-lg font-semibold hover:text-primary">
+                  Så fungerar vården
+                </Link>
+                <Link href="#" className="text-lg font-semibold hover:text-primary">
+                  Hitta vård
                 </Link>
               </nav>
             </SheetContent>
           </Sheet>
 
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="#" className="flex items-center gap-2">
             {/* 1177 Logo Simulation */}
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground font-bold text-lg">
               1177
             </div>
-            <span className="text-2xl font-bold text-primary tracking-tight hidden sm:inline-block">
-              1177
-            </span>
           </Link>
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-8 ml-8">
-          <Link href="#" className="text-sm font-medium hover:underline hover:text-primary underline-offset-4">
+        <nav className="hidden xl:flex items-center gap-6 ml-6">
+          <Link href="#" className="text-sm font-semibold hover:underline hover:text-primary underline-offset-4 whitespace-nowrap">
             Sjukdomar & besvär
           </Link>
-          <Link href="#" className="text-sm font-medium hover:underline hover:text-primary underline-offset-4">
-            Hitta vård
+          <Link href="#" className="text-sm font-semibold hover:underline hover:text-primary underline-offset-4 whitespace-nowrap">
+            Undersökning & behandling
           </Link>
-          <Link href="#" className="text-sm font-medium hover:underline hover:text-primary underline-offset-4">
+          <Link href="#" className="text-sm font-semibold hover:underline hover:text-primary underline-offset-4 whitespace-nowrap">
             Liv & hälsa
           </Link>
-          <Link href="#" className="text-sm font-medium hover:underline hover:text-primary underline-offset-4">
-            Barn & föräldrar
+          <Link href="#" className="text-sm font-semibold hover:underline hover:text-primary underline-offset-4 whitespace-nowrap">
+            Barn & gravid
+          </Link>
+          <Link href="#" className="text-sm font-semibold hover:underline hover:text-primary underline-offset-4 whitespace-nowrap">
+            Olyckor & skador
+          </Link>
+          <Link href="#" className="text-sm font-semibold hover:underline hover:text-primary underline-offset-4 whitespace-nowrap">
+            Så fungerar vården
           </Link>
         </nav>
 
         {/* Right Side Actions */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 ml-auto">
           {/* Region Selector (Mock) */}
-          <Button variant="ghost" className="hidden md:flex text-muted-foreground">
+          <Button variant="ghost" className="hidden lg:flex text-muted-foreground whitespace-nowrap">
             Välj region
           </Button>
           
-          <Button className="font-semibold gap-2 rounded-full px-6">
+          <Link href="#" className="hidden lg:flex text-sm font-semibold hover:underline hover:text-primary underline-offset-4 whitespace-nowrap">
+            För vårdpersonal
+          </Link>
+
+          <Button className="font-semibold gap-2 rounded-full px-6 whitespace-nowrap">
             <User className="h-4 w-4" />
             Logga in
           </Button>
@@ -81,4 +97,6 @@ export function SiteHeader() {
     </header>
   )
 }
+
+
 

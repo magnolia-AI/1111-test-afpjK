@@ -1,85 +1,89 @@
 import { 
-  Stethoscope, 
+  FileText, 
+  Pill, 
+  Calendar, 
   MapPin, 
-  Heart, 
-  Baby, 
-  Scale, 
-  Monitor,
+  FileCheck, 
+  Mail,
   ArrowRight
 } from "lucide-react"
 import Link from "next/link"
 import { Card, CardContent } from "@/components/ui/card"
 
-const categories = [
+const shortcuts = [
   {
-    title: "Sjukdomar & besvär",
-    description: "Fakta och råd om sjukdomar och besvär.",
-    icon: Stethoscope,
+    title: "Läsa journalen",
+    description: "Se din journalinformation via nätet.",
+    icon: FileText,
     href: "#",
-    color: "bg-red-100 text-primary",
+    color: "bg-blue-50 text-blue-700",
+  },
+  {
+    title: "Förnya recept",
+    description: "Begär receptförnyelse hos din mottagning.",
+    icon: Pill,
+    href: "#",
+    color: "bg-green-50 text-green-700",
+  },
+  {
+    title: "Se bokade tider",
+    description: "Håll koll på dina kommande vårdbesök.",
+    icon: Calendar,
+    href: "#",
+    color: "bg-purple-50 text-purple-700",
   },
   {
     title: "Hitta vård",
-    description: "Kontaktuppgifter till vården i hela Sverige.",
+    description: "Sök mottagningar och vårdgivare.",
     icon: MapPin,
     href: "#",
-    color: "bg-blue-100 text-blue-700",
+    color: "bg-red-50 text-primary",
   },
   {
-    title: "Liv & hälsa",
-    description: "Om hälsa, träning, mat och sex.",
-    icon: Heart,
+    title: "Läsa och skicka intyg",
+    description: "Hantera dina intyg digitalt.",
+    icon: FileCheck,
     href: "#",
-    color: "bg-green-100 text-green-700",
+    color: "bg-yellow-50 text-yellow-700",
   },
   {
-    title: "Barn & föräldrar",
-    description: "Att vänta och ha barn.",
-    icon: Baby,
+    title: "Läsa och skicka meddelanden",
+    description: "Kontakta vården via 1177 inkorg.",
+    icon: Mail,
     href: "#",
-    color: "bg-yellow-100 text-yellow-700",
-  },
-  {
-    title: "Regler & rättigheter",
-    description: "Dina rättigheter i vården.",
-    icon: Scale,
-    href: "#",
-    color: "bg-purple-100 text-purple-700",
-  },
-  {
-    title: "E-tjänster",
-    description: "Gör dina vårdärenden via nätet.",
-    icon: Monitor,
-    href: "#",
-    color: "bg-primary/10 text-primary",
+    color: "bg-indigo-50 text-indigo-700",
   },
 ]
 
 export function CategoryGrid() {
   return (
-    <section className="container py-12 px-4">
-      <h2 className="text-3xl font-bold mb-8 text-[#333333]">Utforska 1177</h2>
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {categories.map((category) => (
-          <Link key={category.title} href={category.href} className="group">
-            <Card className="h-full border-none shadow-sm transition-all hover:shadow-md bg-white">
-              <CardContent className="p-6 flex flex-col h-full">
-                <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-4 ${category.color}`}>
-                  <category.icon className="h-6 w-6" />
+    <section className="container py-8 px-4 -mt-12 relative z-10">
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        {shortcuts.map((shortcut) => (
+          <Link key={shortcut.title} href={shortcut.href} className="group">
+            <Card className="h-full border-none shadow-md transition-all hover:shadow-lg bg-white">
+              <CardContent className="p-6 flex items-start gap-4 h-full">
+                <div className={`w-12 h-12 shrink-0 rounded-full flex items-center justify-center ${shortcut.color}`}>
+                  <shortcut.icon className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
-                  {category.title}
-                </h3>
-                <p className="text-muted-foreground mb-4 flex-1">
-                  {category.description}
-                </p>
-                <div className="flex items-center text-primary font-medium mt-auto group-hover:underline">
-                  Läs mer <ArrowRight className="ml-1 h-4 w-4" />
+                <div className="flex flex-col">
+                  <h3 className="text-lg font-bold mb-1 group-hover:text-primary transition-colors flex items-center">
+                    {shortcut.title}
+                    <ArrowRight className="ml-2 h-4 w-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-primary" />
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    {shortcut.description}
+                  </p>
                 </div>
               </CardContent>
             </Card>
           </Link>
         ))}
+      </div>
+      <div className="mt-8 text-center md:hidden">
+        <Link href="#" className="text-primary font-semibold hover:underline">
+          Se alla tjänster
+        </Link>
       </div>
     </section>
   )
