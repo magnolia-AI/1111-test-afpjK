@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
@@ -8,25 +9,29 @@ const articles = [
     title: "Texter på lättläst svenska",
     summary: "Läs korta texter om bland annat sjukdomar, graviditet och hur vården i Sverige fungerar.",
     category: "Information",
-    href: "#"
+    href: "#",
+    image: "/images/news-easy-swedish.jpg"
   },
   {
     title: "Så hittar du lössen",
     summary: "Läs mer om hur du hittar lössen och hur du blir av med dem.",
     category: "Barn & Skola",
-    href: "#"
+    href: "#",
+    image: "/images/news-lice-check.jpg"
   },
   {
     title: "Anmäl dig till donationsregistret",
     summary: "Du kan säga ja eller nej till att donera organ och vävnader efter din död.",
     category: "Viktigt",
-    href: "#"
+    href: "#",
+    image: "/images/news-donation.jpg"
   },
   {
     title: "Sexuell hälsa",
     summary: "Sexuell hälsa handlar om att må bra och kunna bestämma över sin kropp och sexualitet.",
     category: "Hälsa",
-    href: "#"
+    href: "#",
+    image: "/images/news-sexual-health.jpg"
   }
 ]
 
@@ -44,11 +49,13 @@ export function NewsSection() {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {articles.map((item, index) => (
             <Card key={index} className="overflow-hidden border shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
-              <div className="h-40 bg-muted/30 w-full relative">
-                 {/* Placeholder for images */}
-                <div className={`absolute inset-0 flex items-center justify-center text-muted-foreground bg-primary/${5 + (index * 5)}`}>
-                  Bild
-                </div>
+              <div className="h-40 relative w-full">
+                <Image 
+                  src={item.image} 
+                  alt={item.title}
+                  fill
+                  className="object-cover"
+                />
               </div>
               <CardHeader className="pb-2">
                 <div className="text-xs font-bold text-primary mb-2 uppercase tracking-wide">
