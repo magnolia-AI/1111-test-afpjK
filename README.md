@@ -1,58 +1,84 @@
-# Next.js Template Project
+# 1177.se Clone
 
-This is a versatile template for building web applications with Next.js and Tailwind CSS. It includes a responsive layout, theme switching, and various UI components to help you get started quickly.
+An accurate, responsive recreation of the Swedish healthcare guide portal (1177 Vårdguiden) built with modern web technologies. This project focuses on accessibility, performance, and the distinct utilitarian design language of the Swedish public healthcare system.
 
-## Features
+## 🚀 Tech Stack
 
-- 🎨 Responsive layout with header and footer
-- 🌓 Dark/light mode with theme switching
-- 📱 Mobile-friendly navigation
-- 🧩 Pre-built UI components
-- 🚀 Performance optimized
-- 🔍 SEO-friendly structure
+- **Framework**: [Next.js 15+](https://nextjs.org/) (App Router)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Components**: [Shadcn/UI](https://ui.shadcn.com/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Runtime/Package Manager**: [Bun](https://bun.sh/)
+- **Database (Ready)**: Drizzle ORM (Template prepared)
 
-## Getting Started
+## ✨ Features
 
-1. Clone this repository or use it as a template
+- **Authentic Design System**: Meticulously recreated color palette using Vårdguiden Red (`#D11241`), Slate Blue, and stark white backgrounds.
+- **Responsive Navigation**:
+  - Complex desktop header with informative links.
+  - Mobile-optimized drawer navigation using Shadcn Cheet components.
+- **Key Sections**:
+  - **Sjukdomar & Besvär**: Hero navigation for primary care categories.
+  - **Self-Service Grid**: Quick access to "Journalen", "Boka tid", and "Förnya recept".
+  - **News Feed**: Current events and healthcare updates.
+- **Accessibility**: High-contrast typography and semantic HTML structure.
+
+## 🛠️ Getting Started
+
+### Prerequisites
+
+- [Bun](https://bun.sh/) (Recommended) or Node.js
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd 1177-clone
+   ```
+
 2. Install dependencies:
    ```bash
-   npm install
-   # or
-   yarn install
-   # or
-   pnpm install
+   bun install
    ```
+
 3. Run the development server:
    ```bash
-   npm run dev
-   # or
-   yarn dev
-   # or
-   pnpm dev
+   bun run dev
    ```
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-## Customization
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-This template is designed to be fully customizable:
+## 📂 Project Structure
 
-- **Styling**: Modify the theme in `app/globals.css`
-- **Layout**: Edit the layout structure in `app/layout.tsx`
-- **Content**: Replace placeholder content in `app/page.tsx`
-- **Components**: Add or modify components in the `components` directory
+```
+├── app/
+│   ├── globals.css      # Design tokens and global styles
+│   ├── layout.tsx       # Root layout including fonts and providers
+│   └── page.tsx         # Homepage composition
+├── components/
+│   ├── ui/              # Reusable Shadcn/UI components
+│   ├── site-header.tsx  # Main navigation bar
+│   ├── hero-section.tsx # Search and primary messaging
+│   ├── category-grid.tsx# Quick access service cards
+│   └── news-section.tsx # Article feed
+└── lib/
+    └── utils.ts         # Utility functions
+```
 
-## Deployment
+## 🎨 Design Guidelines
 
-Deploy your customized template using Vercel, Netlify, or any other hosting service that supports Next.js.
+This project follows the 1177 Design Language:
 
-## Learn More
+- **Typography**: Open Sans (Primary), JetBrains Mono (Code/Dev).
+- **Colors**:
+  - Primary: Vårdguiden Red (`var(--primary)`)
+  - Accent: Slate Blue (`var(--accent)`)
+  - Background: Stark White / Light Grey (`#F5F5F5`)
+- **Philosophy**: Clarity, Accessibility, and Trust.
 
-To learn more about the technologies used in this template:
+## 📄 License
 
-- [Next.js Documentation](https://nextjs.org/docs)
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-- [shadcn/ui Components](https://ui.shadcn.com)
+This project is for educational purposes as a UI reproduction. All brand assets (Logos, Names) belong to Inera AB / 1177 Vårdguiden.
 
-## License
-
-This template is MIT licensed.
