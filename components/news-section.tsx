@@ -10,7 +10,7 @@ const articles = [
   summary: "Läs korta texter om bland annat sjukdomar, graviditet och hur vården i Sverige fungerar.",
   category: "Information",
   href: "#",
-  image: "/images/news-easy-swedish.jpg"
+  image: '/images/news-sexual-health.jpg'
 },
 {
   title: "Så hittar du lössen",
