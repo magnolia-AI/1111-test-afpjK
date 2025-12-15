@@ -10,7 +10,7 @@ const articles = [
   summary: "Läs korta texter om bland annat sjukdomar, graviditet och hur vården i Sverige fungerar.",
   category: "Information",
   href: "#",
-  image: '/images/legacy_qK3Tnnv3PL.png'
+  image: '/images/news-easy-swedish.jpg'
 },
 {
   title: "Så hittar du lössen",
@@ -43,8 +43,8 @@ export function NewsSection() {
           src="/images/news-easy-swedish.jpg"
           alt=""
           fill
-          className="object-cover"
-        />
+          className="object-cover" />
+
       </div>
       <div className="container px-4 relative z-10">
         <div className="flex items-center justify-between mb-8">
@@ -93,5 +93,3 @@ export function NewsSection() {
     </section>);
 
 }
-
-
