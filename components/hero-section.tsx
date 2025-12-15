@@ -26,7 +26,7 @@ export function HeroSection() {
             Vad vill du göra nu??
           </h1>
           <p className="mb-10 text-lg md:text-xl text-muted-foreground/90 max-w-xl leading-relaxed">
-            Här hittar du kvalitetssäkrad information om hälsa, sjukdomar och var du kan få vård.
+            Här hittar du kvalitetssäkrad information om hälsa, sjukdomar och var du kan få vård och annat skoj
           </p>
           
           <div className="relative mb-8 max-w-2xl group">

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -10,7 +9,7 @@ const articles = [
   summary: "Läs korta texter om bland annat sjukdomar, graviditet och hur vården i Sverige fungerar.",
   category: "Information",
   href: "#",
-  image: '/images/legacy_qK3Tnnv3PL.png'
+  image: '/images/news-easy-swedish.jpg'
 },
 {
   title: "Så hittar du lössen",
@@ -37,8 +36,15 @@ const articles = [
 
 export function NewsSection() {
   return (
-    <section className="bg-white py-16" src='/images/news-easy-swedish.jpg'>
-      <div className="container px-4">
+    <section className="relative bg-white py-16 overflow-hidden">
+      <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
+        <img
+          src="/images/news-easy-swedish.jpg"
+          alt=""
+          className="h-full w-full object-cover"
+        />
+      </div>
+      <div className="container px-4 relative z-10">
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-3xl font-bold text-[#333333]">Aktuellt</h2>
           <Button variant="link" className="text-primary font-semibold hidden md:flex">
@@ -50,12 +56,11 @@ export function NewsSection() {
           {articles.map((item, index) =>
           <Card key={index} className="overflow-hidden border shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
               <div className="h-40 relative w-full">
-                <Image
-                src={item.image}
-                alt={item.title}
-                fill
-                className="object-cover" />
-
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
               </div>
               <CardHeader className="pb-2">
                 <div className="text-xs font-bold text-primary mb-2 uppercase tracking-wide">
@@ -85,3 +90,6 @@ export function NewsSection() {
     </section>);
 
 }
+
+
+
