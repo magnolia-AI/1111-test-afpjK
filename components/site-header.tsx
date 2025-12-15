@@ -128,7 +128,7 @@ export function SiteHeader() {
               <NavigationMenuList className="gap-1">
                 {menuData.map((category) => (
                   <NavigationMenuItem key={category.title}>
-                    <NavigationMenuTrigger className="bg-transparent text-[15px] font-semibold text-[#1a1a1a] hover:text-[#D11241] data-[state=open]:text-[#D11241] data-[state=open]:bg-primary/5 focus:bg-primary/5 hover:bg-primary/5 px-4 py-2.5 h-auto rounded-full transition-all">
+                    <NavigationMenuTrigger className="bg-transparent text-[15px] font-semibold text-[#1a1a1a] hover:text-[#3B6694] hover:bg-[#3B6694]/10 data-[state=open]:bg-[#3B6694] data-[state=open]:text-white focus:bg-[#3B6694]/10 px-4 py-2.5 h-auto rounded-full transition-all">
                       {category.title}
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
@@ -184,7 +184,7 @@ export function SiteHeader() {
                 
                 <NavigationMenuItem>
                   <Link href="#" legacyBehavior passHref>
-                    <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent text-[15px] font-semibold text-[#1a1a1a] hover:text-[#D11241] focus:bg-primary/5 hover:bg-primary/5 px-4 py-2.5 h-auto rounded-full transition-all cursor-pointer")}>
+                    <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent text-[15px] font-semibold text-[#1a1a1a] hover:text-[#3B6694] focus:bg-[#3B6694]/10 hover:bg-[#3B6694]/10 px-4 py-2.5 h-auto rounded-full transition-all cursor-pointer")}>
                       Hitta vård
                     </NavigationMenuLink>
                   </Link>
@@ -303,4 +303,6 @@ const ListItem = React.forwardRef<
   )
 })
 ListItem.displayName = "ListItem"
+
+
 
