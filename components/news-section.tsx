@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -39,12 +38,11 @@ export function NewsSection() {
   return (
     <section className="relative bg-white py-16 overflow-hidden">
       <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
-        <Image
+        <img
           src="/images/news-easy-swedish.jpg"
           alt=""
-          fill
-          className="object-cover" />
-
+          className="h-full w-full object-cover"
+        />
       </div>
       <div className="container px-4 relative z-10">
         <div className="flex items-center justify-between mb-8">
@@ -58,12 +56,11 @@ export function NewsSection() {
           {articles.map((item, index) =>
           <Card key={index} className="overflow-hidden border shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
               <div className="h-40 relative w-full">
-                <Image
-                src={item.image}
-                alt={item.title}
-                fill
-                className="object-cover" />
-
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
               </div>
               <CardHeader className="pb-2">
                 <div className="text-xs font-bold text-primary mb-2 uppercase tracking-wide">
@@ -93,3 +90,6 @@ export function NewsSection() {
     </section>);
 
 }
+
+
+
