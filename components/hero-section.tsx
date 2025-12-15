@@ -23,7 +23,7 @@ export function HeroSection() {
       <div className="container relative z-10 px-4 pt-16 pb-24 md:py-32">
         <div className="max-w-3xl">
           <h1 className='mb-6 font-bold tracking-tight md:text-5xl lg:text-6xl drop-shadow-sm bg-transparent text-[#333333]'>
-            Vad vill du göra nu?...
+            Vad vill du göra nu?
           </h1>
           <p className="mb-10 text-lg md:text-xl text-muted-foreground/90 max-w-xl leading-relaxed">
             Här hittar du kvalitetssäkrad information om hälsa, sjukdomar och var du kan få vård.
