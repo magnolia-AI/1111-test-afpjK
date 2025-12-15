@@ -1,9 +1,42 @@
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const SourceTaggingPlugin = require('@antonmagnus/next-source-tagging');
 
+// Get the loader path
+const loaderPath = require.resolve('@antonmagnus/next-source-tagging/dist/loader.js');
+
+// Loader options (shared between webpack and turbopack)
+const loaderOptions = {
+  debug: false,
+  enabled: true,
+  enableInProduction: false,
+  tagReactComponents: true
+};
+
 const nextConfig = {
-  // Add empty turbopack config to silence Next.js 16 warning
-  turbopack: {},
+  // Turbopack configuration (for Next.js 16+)
+  turbopack: {
+    rules: {
+      // Apply loader to TypeScript/JavaScript files
+      // condition: { not: 'foreign' } excludes node_modules
+      // No 'as' property - loader output type matches input type
+      '*.tsx': {
+        condition: { not: 'foreign' },
+        loaders: [{ loader: loaderPath, options: loaderOptions }],
+      },
+      '*.ts': {
+        condition: { not: 'foreign' },
+        loaders: [{ loader: loaderPath, options: loaderOptions }],
+      },
+      '*.jsx': {
+        condition: { not: 'foreign' },
+        loaders: [{ loader: loaderPath, options: loaderOptions }],
+      },
+      '*.js': {
+        condition: { not: 'foreign' },
+        loaders: [{ loader: loaderPath, options: loaderOptions }],
+      },
+    },
+  },
   experimental: {
     serverActions: {
       allowedOrigins: ['*.fly.dev'],
@@ -39,22 +72,16 @@ const nextConfig = {
       },
     ];
   },
+  // Webpack configuration (fallback for --no-turbopack)
   webpack: (config, { dev, isServer }) => {
     // Only apply source tagging in development mode
     if (dev) {
-      // Add the loader explicitly to ensure it's applied
-      // const loaderPath = path.resolve(__dirname, '../dist/loader.js');
-      const loaderPath = require.resolve('@antonmagnus/next-source-tagging/dist/loader.js');
       config.module.rules.unshift({
         test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,
         use: [{
           loader: loaderPath,
-          options: {
-            debug: false,
-            enabled: true,
-            enableInProduction: false
-          }
+          options: loaderOptions
         }]
       });
     }
