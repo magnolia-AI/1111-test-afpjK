@@ -37,8 +37,16 @@ const articles = [
 
 export function NewsSection() {
   return (
-    <section className="bg-white py-16">
-      <div className="container px-4">
+    <section className="relative bg-white py-16 overflow-hidden">
+      <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
+        <Image
+          src="/images/news-easy-swedish.jpg"
+          alt=""
+          fill
+          className="object-cover"
+        />
+      </div>
+      <div className="container px-4 relative z-10">
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-3xl font-bold text-[#333333]">Aktuellt</h2>
           <Button variant="link" className="text-primary font-semibold hidden md:flex">
@@ -85,4 +93,5 @@ export function NewsSection() {
     </section>);
 
 }
+
 
