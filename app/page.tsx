@@ -18,7 +18,7 @@ export default function Home() {
           <div className="container px-4 text-center">
             <h2 className="text-3xl font-bold mb-6">Vill du veta mer om hur 1177 fungerar?</h2>
             <p className="max-w-2xl mx-auto text-lg mb-8 opacity-90">
-              1177 är hela Sveriges samlingsplats för information och tjänster inom hälsa och vård. 
+              1188 är hela Sveriges samlingsplats för information och tjänster inom hälsa och vård. 
               Vi finns på webben, på telefon och som app.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
