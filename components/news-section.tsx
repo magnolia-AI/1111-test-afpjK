@@ -37,7 +37,7 @@ const articles = [
 
 export function NewsSection() {
   return (
-    <section className="bg-white py-16" src='/images/news-easy-swedish.jpg'>
+    <section className="bg-white py-16">
       <div className="container px-4">
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-3xl font-bold text-[#333333]">Aktuellt</h2>
@@ -85,3 +85,4 @@ export function NewsSection() {
     </section>);
 
 }
+
